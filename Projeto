@@ -1,0 +1,98 @@
+from datetime import datetime
+
+
+lista = [[1, X-Salada, 10.00, 0], [2, X-Burger, 10.00, 0], [3, Cachorro-Quente, 7.50, 0], [4, Misto Quente, 8.00, 0], [5, Salada de Frutas, 5.50, 0], [6, Refrigerante, 4.50,0],[7, Suco Natural, 6.25,0]] #cardapio: [0] cóigo do produto, [1] produto, [2] preço, [3] quantidade
+lista1 = [] #produtos que serão cobrados    
+lista2 = [] #histórico dos pedidos
+caixa = pagar
+
+def menu(): #menu de opções no qual o usuário seleciona o que deseja fazer 
+    print('''
+            MENU 
+        1) Novo Pedido
+        2)Cancelar Pedido
+        3)Inserir Produto
+        4)Cancelar Produto
+        5)Valor do Pedido
+        6)Extrato do Pedido
+
+        0)Sair\n''')
+
+
+        
+
+
+
+
+
+
+
+
+
+
+def verificacao(CPF,SENHA):#função para confirmar os dados cadastrados
+    while True:
+        cpf = int(input("Digite seu CPF: "))
+        senha = str(input("Digite sua senha: "))
+        if (cpf == CPF) and (senha == SENHA): #se os dados forem compatíveis, o cliente será levado de volta para a função de que partiu. 
+            CPF = 0
+            SENHA = ''
+            return True
+        else:
+            print("Seus dados são divergentes. Por favor, tente novamente.")
+
+
+
+def inserir(CPF, SENHA, lista1, lista, lista2): #função para inserir produtos
+    print("Para inserir um novo produto você deve: ")
+    verificar(CPF, SENHA) #o dados cadastrais devem ser confirmados para ainserção de um produto.
+    somar(lista, lista1, lista2) #chama a função somar , para adicionar novo produto.  
+
+
+
+
+
+while True: #programa que irá aparecer até que o usuário deseje sair. 
+
+menu()
+opcao = int(input("Escolha a opção desejada: "))
+if opcao == 0:
+    print("Foi bom ver por aqui! Volte Sempre")
+    break
+elif opcao == 1: #novo pedido
+    if len(lista1) > 0: 
+        print("Você já possui um pedido.")
+        continue
+    pedido_new (lista, lista1, nome, cpf, lista2)
+elif opcao == 2: #cancelar pedido
+    cancelar pedido(cpf, senha, lista1, lista2)
+elif opcao == 3: #adicionar novos produtos
+    if len(lista2) == 0:
+        print("Primeiramente inicie um pedido!")    
+        continue
+    inserir(cpf,senha,lista1,lista,lista2=)
+elif opcao == 4: #remover produtos
+    if len(lista1) == 0:
+        print("Primeiramente inicie um pedido!") 
+        continue
+    remover(cpf, senha, lista1,lista2)
+elif opcao == 5: #valor do pedido
+    if len(lista1) == 0:
+        print("Primeiramente inicie um pedido!")
+        continue
+    valor(lista1, pagar)
+elif opcao == 6: #extrato do pedido
+    if caixa == 0:
+         print("Primeiramente inicie um pedido!")
+         continue
+    extrato = open('extrato.txt', 'r')
+
+
+
+    extrato.close()
+else:
+    print("Opção Inexistente. Tente Novamente!") #se o usuário digitar um número que não possui no menu de opções. 
+    continue
+
+
+
